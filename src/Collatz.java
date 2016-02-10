@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * UWW CS424 | Spring 2016 | Program 1
  * This class implements the Collatz Conjecture, wherein
@@ -9,6 +11,22 @@
  */
 public class Collatz {
     private int n;
+
+    /**
+     * Entry point of the Collatz program. Initializes and executes
+     * the program.
+     * @param args Specify value of n, parsable to positive Integer.
+     */
+    public static void main(String[] args) {
+        // Get the value of n from the args
+        String nStr = Objects.requireNonNull(args)[0];
+
+        // Instantiate the Collatz object with the value of n
+        Collatz collatz = new Collatz(Integer.parseInt(nStr));
+
+        // Execute the Collatz program
+        collatz.run();
+    }
 
     /**
      * Initializes a new instance of Collatz with the specified starting Integer.
